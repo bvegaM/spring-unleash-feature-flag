@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: spring-unleash-feature-flag
+
+io:
+  getunleash:
+    app-name: spring-demo-flag
+    instance-id: demo-flag-x
+    environment: development
+    api-url: http://localhost:4242/api
+    api-token: <your_token>
