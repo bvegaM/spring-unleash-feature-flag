@@ -18,8 +18,7 @@ public class ProductServiceWithDiscountImpl implements ProductService {
   public List<Product> getProducts() {
     List<Product> productsWithDiscount = productRepository.getProducts().stream().map(Product::new)
         .toList();
-    productsWithDiscount.forEach(product -> product.setPrice(
-        product.getPrice().subtract(product.getPrice().multiply(Constant.DISCOUNT))));
+    productsWithDiscount.forEach(product -> product.applyDiscount(Constant.DISCOUNT));
     return productsWithDiscount;
   }
 
